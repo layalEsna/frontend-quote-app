@@ -4,7 +4,7 @@ services:
     env: node
     plan: free
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: serve -s build
     envVars:
       - key: NODE_VERSION
         value: 20.16.0
