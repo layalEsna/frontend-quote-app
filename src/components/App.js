@@ -5,11 +5,13 @@ import NavBar from '../pages/NavBar';
 import { Outlet } from 'react-router-dom';
 
 function App() {
+  //const API_URL = "https://my-new-backend-quote-app-8.onrender.com/quotes";
+
   const [quotes, setQuotes] = useState([]);
   const [isToggled, setToggleQ] = useState({})
   
  useEffect(() => {
-        fetch('http://localhost:3001/quotes')
+        fetch('https://my-new-backend-quote-app-8.onrender.com/quotes')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Error fetching data!');
@@ -33,7 +35,7 @@ function App() {
     const addLikes = {
       ...quoteToUpdate, likes: quoteToUpdate.likes + 1
       }
-    fetch(`http://localhost:3001/quotes/${qId}`, {
+    fetch(`https://my-new-backend-quote-app-8.onrender.com/quotes/${qId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
